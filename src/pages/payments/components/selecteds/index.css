@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.flex-1 {
+  flex: 1;
+  background:#F3F2F2;
+  border-radius: 6px 44px;
+  padding: 40px;
+  height: auto;
+  overflow: hidden;
+}
+
+.container-down {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.item-selected {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  color: #403937;
+}
+
+.item-selected:last-child {
+  font-family: 'Roboto';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+}
+
+.confirmation {
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.confirmation > button {
+  display: flex;
+  color: #F3F2F2;
+  justify-content: center;
+  width: 100%;
+  padding: 12px 8px;
+  border: none;
+  font-family: 'Roboto';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 160%; /* 22.4px */
+  text-transform: uppercase;
+  background-color: #DBAC2C;
+  border-radius: 6px;
+  cursor: pointer;
+}

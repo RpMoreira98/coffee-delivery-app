@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+#confirmation-menu {
+  display: flex;
+  flex-direction: row;
+}
+
+.section-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.set-card {
+  display: flex;
+  padding-bottom: 30px;
+  flex-direction: column;
+}
+
+.set-card > h1 {
+  font-family: "Baloo 2";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 130%;
+  color: #C47F17;
+}
+
+.set-card > p {
+  font-family: 'Roboto';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  color: #403937;
+}
+
+.img-card {
+  margin-top: 140px;
+  margin-right: 50px;
+  width: 492px;
+  height: 293px
+}

@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+  width: 526px;
+  border-radius: 6px 36px;
+  padding: 40px;
+  border: solid 1px transparent;
+  border-image: linear-gradient(90deg, rgb(219, 172, 44), rgb(128, 71, 248)) 1 / 1 / 0 stretch;
+  list-style: none;
+}
+
+.cardConfirmation {
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+  color: #574F4D;
+}
+
