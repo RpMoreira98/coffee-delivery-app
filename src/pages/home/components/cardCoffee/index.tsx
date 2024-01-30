@@ -2,16 +2,22 @@ import { FaShoppingCart } from "react-icons/fa";
 import { CoffeeList } from "../../../../types/CoffeeList";
 import "./index.css";
 import { useState } from "react";
+import { useCart } from "../../../../contexts";
 
 type cardCoffeeProps = {
   coffee: CoffeeList;
 };
 
 export const CardCoffee = ({ coffee }: cardCoffeeProps) => {
-  const [value, setValue] = useState<number>(0);
+  const [value, setValue] = useState<number>(1);
+  const cartCtx = useCart();
+
+  const handleAdd = () => {
+    cartCtx?.add(coffee.id, coffee.text, coffee.image, coffee.value);
+  };
 
   const handleMinus = () => {
-    if (value > 0) {
+    if (value > 1) {
       setValue(value - 1);
     }
   };
@@ -44,7 +50,7 @@ export const CardCoffee = ({ coffee }: cardCoffeeProps) => {
               <div>{value}</div>
               <span onClick={handlePlus}>+</span>
             </div>
-            <button className="button2">
+            <button className="button2" onClick={handleAdd}>
               <FaShoppingCart color="#FFF" />
             </button>
           </div>

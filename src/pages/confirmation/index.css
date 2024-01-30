@@ -26,6 +26,11 @@
   color: #C47F17;
 }
 
+.confirmation {
+  border: 1px solid transparent;
+  border: 6px 32px;
+}
+
 .set-card > p {
   font-family: 'Roboto';
   font-size: 20px;

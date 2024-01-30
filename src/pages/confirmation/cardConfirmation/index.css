@@ -7,10 +7,10 @@
   align-items: flex-start;
   gap: 2rem;
   width: 526px;
-  border-radius: 6px 36px;
   padding: 40px;
   border: solid 1px transparent;
   border-image: linear-gradient(90deg, rgb(219, 172, 44), rgb(128, 71, 248)) 1 / 1 / 0 stretch;
+  border-radius: 6px 36px;
   list-style: none;
 }
 
