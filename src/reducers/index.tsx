@@ -2,7 +2,11 @@ import { CoffeeList } from "../types/CoffeeList";
 
 type AddAction = {
   type: "add";
-  payload: Pick<CoffeeList, "id" | "image" | "value" | "text">;
+  payload: CartItem;
+};
+
+export type CartItem = Pick<CoffeeList, "id" | "image" | "value" | "text"> & {
+  amount: number;
 };
 
 type RemoveAction = {
@@ -12,21 +16,30 @@ type RemoveAction = {
 
 type ChatActions = AddAction | RemoveAction;
 
-export const CartReducer = (
-  state: Pick<CoffeeList, "id" | "image" | "value" | "text">[],
-  action: ChatActions
-) => {
+export const CartReducer = (state: CartItem[], action: ChatActions) => {
   switch (action.type) {
-    case "add":
-      return [
-        ...state,
-        {
-          id: state.length,
-          image: action.payload.image,
-          value: action.payload.value,
-          text: action.payload.text,
-        },
-      ];
+    case "add": {
+      const existingIt = state.find((item) => item.id === action.payload.id);
+      if (existingIt) {
+        return state.map((item) =>
+          item.id === existingIt.id
+            ? { ...item, amount: item.amount + action.payload.amount }
+            : item
+        );
+      } else {
+        return [
+          ...state,
+          {
+            id: action.payload.id,
+            image: action.payload.image,
+            value: action.payload.value,
+            text: action.payload.text,
+            amount: action.payload.amount,
+          },
+        ];
+      }
+    }
+
     case "remove":
       return state.filter((item) => item.id !== action.payload.id);
     default:

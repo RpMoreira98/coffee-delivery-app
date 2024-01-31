@@ -1,40 +1,60 @@
 import { FaRegTrashAlt } from "react-icons/fa";
-import logo from "../../../../../public/coffees/1.png";
-import { useState } from "react";
 import "./index.css";
+import { useCart } from "../../../../contexts";
 
-export const SelectCard = () => {
-  const [value, setValue] = useState(0);
+type CartProps = {
+  image: string;
+  text: string;
+  value: number;
+  amount: number;
+  id: number;
+};
+
+export const SelectCard = (props: CartProps) => {
+  const cartCtx = useCart();
   const buttonHandlePlus = () => {
-    setValue(value + 1);
+    if (cartCtx) {
+      cartCtx?.add(
+        id: props.id,
+        image: props.image,
+        text: props.text,
+        value: props.value,
+        amount: 1,
+      );
+    }
   };
 
-  const buttonHandleMinus = () => {
-    if (value > 0) {
-      setValue(value - 1);
-    }
+  const buttonHandleMinus = () => {};
+
+  const buttonRemove = () => {
+    cartCtx?.remove(props.id);
   };
 
   return (
     <div className="selected">
       <div className="rivaldo">
-        <img src={logo} />
+        <img src={props.image} />
         <div className="selections">
-          <p>--</p>
+          <p>{props.text}</p>
           <div className="button-select">
             <div className="button-left">
               <button onClick={buttonHandleMinus}>-</button>
-              <span>{value}</span>
+              <span>{props.amount}</span>
               <button onClick={buttonHandlePlus}>+</button>
             </div>
-            <button className="button-selected">
+            <button className="button-selected" onClick={buttonRemove}>
               <FaRegTrashAlt color="#8047F8" />
               Remover
             </button>
           </div>
         </div>
       </div>
-      <p className="price">--</p>
+      <p className="price">
+        {new Intl.NumberFormat("pt-BR", {
+          style: "currency",
+          currency: "BRL",
+        }).format(props.value)}
+      </p>
     </div>
   );
 };

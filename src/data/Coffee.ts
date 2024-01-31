@@ -8,6 +8,7 @@ export const coffee: CoffeeList[] = [
     title: "Expresso Tradicional",
     text: "O tradicional café feito com água quente e grãos moídos",
     value: 10,
+    amount: 0,
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ export const coffee: CoffeeList[] = [
     title: "Expresso Americano",
     text: "Expresso diluído, menos intenso que o tradicional",
     value: 10,
+    amount: 0,
   },
   {
     id: 3,
@@ -24,6 +26,7 @@ export const coffee: CoffeeList[] = [
     title: "Expresso Cremoso",
     text: "Café expresso tradicional com espuma cremosa",
     value: 10,
+    amount: 0,
   },
   {
     id: 4,
@@ -33,6 +36,7 @@ export const coffee: CoffeeList[] = [
     title: "Expresso Gelado",
     text: "Bebida preparada com café expresso e cubos de gelo",
     value: 10,
+    amount: 0,
   },
   {
     id: 5,
@@ -42,6 +46,7 @@ export const coffee: CoffeeList[] = [
     title: "Café com Leite",
     text: "Meio a meio de expresso tradicional com leite vaporizado",
     value: 10,
+    amount: 0,
   },
   {
     id: 6,
@@ -51,6 +56,7 @@ export const coffee: CoffeeList[] = [
     title: "Latte",
     text: "Uma dose de café expresso com o dobro de leite e espuma cremosa",
     value: 10,
+    amount: 0,
   },
   {
     id: 7,
@@ -60,6 +66,7 @@ export const coffee: CoffeeList[] = [
     title: "Capuccino",
     text: "Bebida com canela feita de doses iguais de café, leite e espuma",
     value: 10,
+    amount: 0,
   },
   {
     id: 8,
@@ -69,6 +76,7 @@ export const coffee: CoffeeList[] = [
     title: "Macciato",
     text: "Café expresso misturado com um pouco de leite quente e espuma",
     value: 10,
+    amount: 0,
   },
   {
     id: 9,
@@ -78,6 +86,7 @@ export const coffee: CoffeeList[] = [
     title: "Mocaccino",
     text: "Café expresso com calda de chocolate, pouco leite e espuma",
     value: 10,
+    amount: 0,
   },
   {
     id: 10,
@@ -87,6 +96,7 @@ export const coffee: CoffeeList[] = [
     title: "Chocolate Quente",
     text: "Bebida feita com chocolate dissolvido no leite quente e café",
     value: 10,
+    amount: 0,
   },
   {
     id: 11,
@@ -97,6 +107,7 @@ export const coffee: CoffeeList[] = [
     title: "Cubano",
     text: "Café expresso misturado com um pouco de leite quente e espuma",
     value: 10,
+    amount: 0,
   },
   {
     id: 12,
@@ -105,6 +116,7 @@ export const coffee: CoffeeList[] = [
     title: "Havaiano",
     text: "Drink gelado de café expresso com rum, creme de leite e hortelã",
     value: 10,
+    amount: 0,
   },
   {
     id: 13,
@@ -114,6 +126,7 @@ export const coffee: CoffeeList[] = [
     title: "Árabe",
     text: "Bebida preparada com grãos de café árabe e especiarias",
     value: 10,
+    amount: 0,
   },
   {
     id: 14,
@@ -123,5 +136,6 @@ export const coffee: CoffeeList[] = [
     title: "Irlandês",
     text: "Bebida a base de café, uísque irlandês, açúcar e chantilly",
     value: 10,
+    amount: 0,
   },
 ];

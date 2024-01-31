@@ -13,7 +13,13 @@ export const CardCoffee = ({ coffee }: cardCoffeeProps) => {
   const cartCtx = useCart();
 
   const handleAdd = () => {
-    cartCtx?.add(coffee.id, coffee.text, coffee.image, coffee.value);
+    cartCtx?.add(
+      coffee.id,
+      coffee.text,
+      coffee.image,
+      coffee.value,
+      coffee.amount
+    );
   };
 
   const handleMinus = () => {

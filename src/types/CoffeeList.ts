@@ -7,4 +7,5 @@ export type CoffeeList = {
   title: string;
   text: string;
   value: number;
+  amount: number;
 };

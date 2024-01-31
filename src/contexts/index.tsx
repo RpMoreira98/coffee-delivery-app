@@ -5,25 +5,46 @@ import {
   useMemo,
   useReducer,
 } from "react";
-import { CoffeeList } from "../types/CoffeeList";
-import { CartReducer } from "../reducers";
+
+import { CartItem, CartReducer } from "../reducers";
 
 type ChatContext = {
-  cart: Pick<CoffeeList, "id" | "image" | "value" | "text">[];
-  add: (id: number, text: string, image: string, value: number) => void;
+  cart: CartItem[];
+  add: (
+    id: number,
+    text: string,
+    image: string,
+    value: number,
+    amount: number
+  ) => void;
+  remove: (id: number) => void;
 };
 
 export const CartContext = createContext<ChatContext | null>(null);
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [cart, dispacth] = useReducer(CartReducer, []);
-  const add = (id: number, text: string, image: string, value: number) => {
+  const add = (
+    id: number,
+    text: string,
+    image: string,
+    value: number,
+    amount: number
+  ) => {
     dispacth({
       type: "add",
-      payload: { id, text, image, value },
+      payload: { id, text, image, value, amount },
     });
   };
-  const value = useMemo(() => ({ cart, add }), [cart]);
+
+  const removeCart = (id: number) => {
+    dispacth({
+      type: "remove",
+      payload: { id },
+    });
+  };
+
+  const value = useMemo(() => ({ cart, add, remove: removeCart }), [cart]);
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };
 
