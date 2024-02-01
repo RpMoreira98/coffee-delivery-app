@@ -13,14 +13,9 @@ export const CardCoffee = ({ coffee }: cardCoffeeProps) => {
   const cartCtx = useCart();
 
   const handleAdd = () => {
-    cartCtx?.add(
-      coffee.id,
-      coffee.text,
-      coffee.image,
-      coffee.value,
-      coffee.amount
-    );
+    cartCtx?.add(coffee.id, coffee.text, coffee.image, coffee.value, value);
   };
+  console.log(coffee.amount);
 
   const handleMinus = () => {
     if (value > 1) {

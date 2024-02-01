@@ -5,6 +5,18 @@ import { useNavigate } from "react-router-dom";
 export const Selected = () => {
   const cartCtx = useCart();
   const navigate = useNavigate();
+  const totalAmount = cartCtx?.cart.reduce((acc, curr) => {
+    return acc + curr.amount;
+  }, 0);
+
+  const delivery = 3.5;
+
+  const totalValue =
+    delivery +
+    (cartCtx?.cart.reduce((acc, curr) => {
+      return acc + curr.value * curr.amount;
+    }, 0) ?? 0);
+
   return (
     <div className="flex-1">
       <div className="container-down">
@@ -22,15 +34,25 @@ export const Selected = () => {
         })}
         <div className="item-selected">
           <p>Total de itens</p>
-          <span>--</span>
+          <span>{totalAmount}</span>
         </div>
         <div className="item-selected">
           <p>Entrega</p>
-          <span>--</span>
+          <span>
+            {new Intl.NumberFormat("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+            }).format(delivery as number)}
+          </span>
         </div>
         <div className="item-selected">
           <p>Total</p>
-          <span>--</span>
+          <span>
+            {new Intl.NumberFormat("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+            }).format(totalValue as number)}
+          </span>
         </div>
       </div>
       <div className="confirmation">

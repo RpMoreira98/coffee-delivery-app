@@ -14,17 +14,15 @@ export const SelectCard = (props: CartProps) => {
   const cartCtx = useCart();
   const buttonHandlePlus = () => {
     if (cartCtx) {
-      cartCtx?.add(
-        id: props.id,
-        image: props.image,
-        text: props.text,
-        value: props.value,
-        amount: 1,
-      );
+      cartCtx?.add(props.id, props.text, props.image, props.value, 1);
     }
   };
 
-  const buttonHandleMinus = () => {};
+  const buttonHandleMinus = () => {
+    if (props.amount > 1) {
+      cartCtx?.add(props.id, props.text, props.image, props.value, -1);
+    }
+  };
 
   const buttonRemove = () => {
     cartCtx?.remove(props.id);
