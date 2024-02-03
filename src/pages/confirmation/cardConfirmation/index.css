@@ -5,13 +5,22 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  background: #FAFAFA;
   gap: 2rem;
   width: 526px;
   padding: 40px;
-  border: solid 1px transparent;
-  border-image: linear-gradient(90deg, rgb(219, 172, 44), rgb(128, 71, 248)) 1 / 1 / 0 stretch;
+  border: 1px solid;
   border-radius: 6px 36px;
-  list-style: none;
+  position: relative;
+  
+  &::before{
+    content: '';
+    position: absolute;
+    inset: -1px;
+    z-index: -1;
+    border-radius: 7px 37px;
+    background: linear-gradient(102.89deg, #dbac2c 2.61%, #8847f8 98.76%);
+  }
 }
 
 .cardConfirmation {

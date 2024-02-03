@@ -1,13 +1,23 @@
 import { useCart } from "../../../../contexts";
+import { useForm } from "../../../../contexts/forms";
 import { SelectCard } from "../selectCard";
 import "./index.css";
 import { useNavigate } from "react-router-dom";
 export const Selected = () => {
   const cartCtx = useCart();
   const navigate = useNavigate();
+  const formCtx = useForm();
   const totalAmount = cartCtx?.cart.reduce((acc, curr) => {
     return acc + curr.amount;
   }, 0);
+
+  const handleConfirmation = () => {
+    if (formCtx?.isFormFilled()) {
+      navigate("/confirmation");
+    } else {
+      alert("Por favor, preencha todos os campos antes de confirmar o pedido.");
+    }
+  };
 
   const delivery = 3.5;
 
@@ -56,9 +66,7 @@ export const Selected = () => {
         </div>
       </div>
       <div className="confirmation">
-        <button onClick={() => navigate("/confirmation")}>
-          Confirmar Pedido
-        </button>
+        <button onClick={handleConfirmation}>Confirmar Pedido</button>
       </div>
     </div>
   );
