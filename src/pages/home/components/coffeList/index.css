@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap');
+
+main > h1 {
+  font-family: 'baloo 2';
+  color: #403937;
+}
+
+.container-coffee {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+

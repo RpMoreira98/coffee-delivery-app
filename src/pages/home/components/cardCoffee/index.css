@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.container{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #F3F2F2;
+  width: 260px;
+  height: 310px;
+  border-radius: 0 30px 0 30px;
+}
+
+.container > img {
+  position: absolute;
+  height: 120px;
+  width: 120px;
+  top: -25px;
+}
+
+.text-information {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 120px;
+}
+
+.type-coffee {
+  display: flex;
+  gap: 1rem;
+  font-size: 10px;
+}
+
+.type-coffee > span { 
+  background-color: #F1E9C9;
+  font-family: 'Roboto';
+  padding: 5px;
+  border-radius: 20px;
+  color: #C47F17;
+  font-weight: bold;
+}
+
+.item-text  {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.item-text > h2 {
+  font-family: 'baloo 2';
+  font-size: 20px;
+  color: #403937;
+  font-weight: bold;
+}
+
+.item-text > p { 
+  font-family: 'Roboto';
+  font-size: 14px;
+  color: #8D8686;
+  padding: 0px 20px;
+  text-align: center;
+}
+
+.button-card {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.value-shop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+  padding: 0 10px;
+  gap: 3rem;
+}
+
+.value-shop > p > span {
+  font-size: 14px;
+  margin-right: 2px;
+}
+
+.value-shop > p{ 
+  font-family: 'baloo 2';
+  font-size: 18px;
+  color: #574F4D;
+  font-weight: bold;
+}
+
+
+.button1 {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: 0.5rem;
+  background-color: #E6E5E5;
+  padding: 10px;
+  border-radius: 10px;
+  user-select: none;
+}
+
+.button1 > span {
+  font-family: 'Roboto';
+  border: none;
+  background-color: #E6E5E5;
+  color: #8047F8;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  height: 15px;
+}
+
+.button1 > div {
+  font-family: 'Roboto';
+  color: #403937;
+  font-weight: bold;
+}
+
+.button2 {
+  display: flex;
+  align-items: center;
+  background-color: #4B2995;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  height: 35px;
+}
+

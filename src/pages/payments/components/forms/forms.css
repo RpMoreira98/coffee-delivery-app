@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.form-validator{ 
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 10px;
+  width: 100%;
+  max-width: 800px;
+  margin-top: 27px;
+}
+
+input {
+  display: flex;
+  width: 200px;
+  padding: 12px;
+  font-family: 'Roboto';
+  font-size: 14px;
+  color: #8D8686;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;  
+  border-radius: 4px;
+  border-style: none;
+  background: #E6E5E5;
+}
+
+.input-2 input{
+    width: 100%;
+}
+
+.input-3 {
+  display: flex;
+  gap: 1rem;
+}
+
+.input-3 input{
+  width: 30%;
+}
+
+.input-3 input:last-child{
+  width: 70%;
+}
+
+.input-4 {
+  display: flex;
+  gap: 1rem;
+}
+
+.input-4 input {
+  width: 30%;
+}
+
+.input-4 > .input-lx {
+  width: 57%;
+}
+
+.input-4 input:last-child{
+  width: 10% ;
+}
