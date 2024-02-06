@@ -5,8 +5,20 @@ import "./payment.css";
 import { FiDollarSign } from "react-icons/fi";
 import { MdPayment, MdPayments } from "react-icons/md";
 import { Selected } from "./components/selecteds";
+import { useForm } from "../../contexts/forms";
+export enum PAYMENTS {
+  DEBIT = "Debit",
+  CREDIT = "Credit",
+  CASH = "Money",
+}
 
 export const Payment = () => {
+  const formCtx = useForm();
+  const methodPayment = (payment: string) => {
+    return payment === formCtx.addText.payment ? "select-payment" : "";
+  };
+  console.log(formCtx.addText);
+
   return (
     <>
       <Header />
@@ -33,30 +45,54 @@ export const Payment = () => {
               O pagamento é feito na entrega. Escolha a forma que deseja pagar
             </p>
             <div className="payments">
-              <div className="item-payment">
+              <button
+                onClick={() =>
+                  formCtx.setAddText((prev) => ({
+                    ...prev,
+                    payment: PAYMENTS.CREDIT,
+                  }))
+                }
+                className={`item-payment ${methodPayment(PAYMENTS.CREDIT)}`}
+              >
                 {" "}
                 <MdPayment
                   color="#8047F8"
                   style={{ width: "16px", height: "16px" }}
                 />
                 Cartão de crédito
-              </div>
-              <div className="item-payment">
+              </button>
+              <button
+                onClick={() =>
+                  formCtx.setAddText((prev) => ({
+                    ...prev,
+                    payment: PAYMENTS.DEBIT,
+                  }))
+                }
+                className={`item-payment ${methodPayment(PAYMENTS.DEBIT)}`}
+              >
                 {" "}
                 <MdPayment
                   color="#8047F8"
                   style={{ width: "16px", height: "16px" }}
                 />
                 Cartão de Débito
-              </div>
-              <div className="item-payment">
+              </button>
+              <button
+                onClick={() =>
+                  formCtx.setAddText((prev) => ({
+                    ...prev,
+                    payment: PAYMENTS.CASH,
+                  }))
+                }
+                className={`item-payment ${methodPayment(PAYMENTS.CASH)}`}
+              >
                 {" "}
                 <MdPayments
                   color="#8047F8"
                   style={{ width: "16px", height: "16px" }}
                 />
                 Dinheiro
-              </div>
+              </button>
             </div>
           </div>
         </section>

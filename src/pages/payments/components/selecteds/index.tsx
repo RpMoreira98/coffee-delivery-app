@@ -66,7 +66,9 @@ export const Selected = () => {
         </div>
       </div>
       <div className="confirmation">
-        <button onClick={handleConfirmation}>Confirmar Pedido</button>
+        <button type="submit" onClick={handleConfirmation}>
+          Confirmar Pedido
+        </button>
       </div>
     </div>
   );

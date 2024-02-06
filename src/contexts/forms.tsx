@@ -7,14 +7,28 @@ type FormData = {
   bairro: string;
   cidade: string;
   uf: string;
+  payment: string;
 };
 
 type FormInitialData = {
   addText: FormData;
-  setAddText: (n: FormData) => void;
+  setAddText: React.Dispatch<
+    React.SetStateAction<{
+      cep: string;
+      rua: string;
+      numero: string;
+      complemento: string;
+      bairro: string;
+      cidade: string;
+      uf: string;
+      payment: string;
+    }>
+  >;
   isFormFilled: () => boolean;
 };
-export const FormContext = createContext<FormInitialData | null>(null);
+export const FormContext = createContext<FormInitialData>(
+  {} as FormInitialData
+);
 
 export const FormDataContext = ({ children }: { children: ReactNode }) => {
   const [addText, setAddText] = useState({
@@ -25,6 +39,7 @@ export const FormDataContext = ({ children }: { children: ReactNode }) => {
     bairro: "",
     cidade: "",
     uf: "",
+    payment: "",
   });
 
   const isFormFilled = () => {

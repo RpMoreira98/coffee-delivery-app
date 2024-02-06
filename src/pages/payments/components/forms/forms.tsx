@@ -15,8 +15,12 @@ export const Forms = () => {
   const formCtx = useForm();
 
   useEffect(() => {
-    formCtx?.setAddText(data);
-  }, [data, formCtx]);
+    formCtx?.setAddText((prev) => ({
+      ...prev,
+      ...data,
+    }));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data]);
 
   return (
     <form action="" className="form-validator">

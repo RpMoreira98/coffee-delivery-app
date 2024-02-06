@@ -112,6 +112,7 @@
   line-height: 160%;
   text-transform: uppercase;
   cursor: pointer;
+  border: none;
 }
 
 .item-6 {
@@ -131,4 +132,9 @@
   font-weight: 700;
   line-height: 130%;
   color: #403937;
+}
+
+.select-payment {
+  border: 1px solid #800080;
+  background-color: #81008136;
 }
